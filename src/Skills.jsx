@@ -1,39 +1,33 @@
-import { motion } from "framer-motion";
 import { Skill } from "./export";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Skills = ({ data }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.2, duration: 1 }}
-      className="lg:w-3/4 w-[90%] my-8"
-    >
-      <p
-        className="my-5"
-      >
-        Always love to learn new skills. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Magni error corporis iste aliquid. Dolor explicabo ab
-        dolorem perspiciatis animi provident dicta. Aliquam ratione consequuntur
-        explicabo deserunt nisi quaerat corporis voluptatibus.
-      </p>
+    <section className="section-spacing">
+      <div className="section-container">
+        <h2 data-aos="fade-down" className="main-title ">
+          My Skills
+        </h2>
 
-      
-      <div className="flex  gap-12 items-center w-full overflow-x-scroll">
-        {data.map((skill, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1, duration: 1 }} 
-            className=""
-          >
-            <Skill skill={skill} />
-          </motion.div>
-        ))}
+        <p
+          data-aos="fade-down"
+          data-aos-delay="250"
+          className="mb-10 text-center"
+        >
+          Always love to learn new skills.
+        </p>
+
+        <div
+          data-aos="fade-right"
+          data-aos-delay="400"
+          className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1  gap-10 lg:gap-16 justify-center items-center w-full "
+        >
+          {data.map((skill, index) => (
+            <Skill key={index} skill={skill} index={index} />
+          ))}
+        </div>
       </div>
-    </motion.div>
+    </section>
   );
 };
 

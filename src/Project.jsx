@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const Project = ({ project }) => {
   const {
     category,
@@ -12,71 +10,43 @@ const Project = ({ project }) => {
   } = project;
 
   return (
-    <div
-      
-      className="py-12 px-12"
-    >
+    <div className="py-6" data-aos="fade-down" data-aos-delay="500">
       <div>
-        <motion.h2
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4, duration: 1.0, ease: "easeInOut" }}
-          className="text-2xl font-bold mb-4 uppercase rounded-xl"
-        >
+        <h2 className="text-2xl font-bold  mb-6 uppercase rounded-xl text-Jost">
           {title}
-        </motion.h2>
+        </h2>
         <div>
-          {usedSkills.map(({ name, backgroundColor }) => (
-            <motion.span
-              key={name}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6, duration: 1.0, ease: "easeInOut" }}
-              style={{ backgroundColor }}
-              className="inline-block mr-4 py-2 px-3 rounded-full text-base text-base-100"
-            >
-              {name}
-            </motion.span>
-          ))}
+          <div className="flex flex-wrap items-center gap-3 lg:gap-4 ">
+            {usedSkills.map(({ name, backgroundColor }) => (
+              <div
+                key={name}
+                style={{ backgroundColor }}
+                className="py-2 px-3 rounded-full text-base text-white"
+              >
+                {name}
+              </div>
+            ))}
+          </div>
         </div>
-        <motion.p
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.6, duration: 0.8, ease: "easeInOut" }}
-          className="my-5"
-        >
-          {description}
-        </motion.p>
+        <p className="mt-4 mb-8">{description}</p>
 
-        <div className="space-x-4 mb-5">
-          <motion.a
+        <div className=" mb-6">
+          <a
             href={githubLink}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7, duration: 0.8, ease: "easeInOut" }}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  px-4 rounded mr-4 lg:mr-8"
           >
             GitHub
-          </motion.a>
-          <motion.a
+          </a>
+          <a
             href={demoLink}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8, duration: 0.8, ease: "easeInOut" }}
             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
           >
             Demo
-          </motion.a>
+          </a>
         </div>
       </div>
 
-      <motion.img
-        src={image}
-        initial={{ opacity: 0, x: -50}}
-        animate={{ opacity: 1, x: 0}}
-        transition={{ delay: 0.9, duration: 1.0, ease: "easeInOut" }}
-        className="rounded-lg shadow-lg"
-      />
+      <img src={image} className="rounded-lg shadow-lg" />
     </div>
   );
 };

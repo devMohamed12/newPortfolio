@@ -29,12 +29,12 @@ class Skill {
 }
 
 const html = new Skill("HTML", "#E34C26", htmlImg, "html");
-const css = new Skill("CSS", "#2965f1", cssImg, "css");
+const css = new Skill("CSS", "#2965f1", "https://logospng.org/download/css-3/logo-css-3-2048.png", "css");
 const js = new Skill("JavaScript", "#D4A017", jsImg, "javascript");
 const react = new Skill("React", "#1f8ead", reactImg, "react");
 const redux = new Skill("Redux", "#764ABC", reduxImg, "redux");
 const tailwindCss = new Skill("Tailwind CSS", "#0a508a", twImg, "tailwind css");
-const mui = new Skill("martial ui", "#007FFF", muiImg, "martial ui");
+const mui = new Skill("martial ui", "#007FFF", "https://svgmix.com/uploads/5b99f5-material-ui.svg", "martial ui");
 const supabase = new Skill(
   "basics of supabase",
   "#3ECF8E",
@@ -66,13 +66,13 @@ class Project {
 }
 
 const dashBoard = new Project(
-  "Dashboard",
+  "Furniture Store Dashboard",
   dashImg,
   "Dashboard project that helps in cotroilling the data of Furniture store that i have created using react and supabase make me can add or remove or update the data with modern looking home page to give overview of the finical status , orders and visitors of the store ",
-  "https://github.com/devMohamed12/dashboard",
   "https://devmohamed12.github.io/dashboard/#/",
+  "https://github.com/devMohamed12/dashboard",
   "reactProject",
-  [react, supabase, reduxImg, mui]
+  [react, supabase, redux, mui]
 );
 
 const furnitureStore = new Project(
@@ -82,7 +82,7 @@ const furnitureStore = new Project(
   "https://github.com/devMohamed12/furniture",
   "https://devmohamed12.github.io/furniture/#/",
   "reactProject",
-  [react,supabase, reduxImg , tailwindCss]
+  [react,supabase, redux , tailwindCss]
 );
 
 const foodBlogProject = new Project(
@@ -135,8 +135,8 @@ const CRUD = new Project(
 );
 
 export const projectsData = [
-  dashBoard,
   furnitureStore,
+  dashBoard,
   foodBlogProject,
   nikeLandingPage,
   msStore,
